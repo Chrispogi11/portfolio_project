@@ -155,7 +155,18 @@ a:hover {
 /* Hero */
 .hero {
   padding: var(--space-2xl) 0;
-  text-align: center;
+}
+
+.hero-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xl);
+}
+
+.hero-copy {
+  flex: 1.1;
+  max-width: 32rem;
 }
 
 .hero h1 {
@@ -170,8 +181,21 @@ a:hover {
 .hero .tagline {
   font-size: 1.25rem;
   color: var(--muted);
-  max-width: 32rem;
-  margin: 0 auto var(--space-xl);
+  max-width: 28rem;
+  margin: 0 0 var(--space-xl);
+}
+
+.hero-photo {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-photo img {
+  max-width: 320px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
 }
 
 /* Sections */
@@ -234,6 +258,44 @@ a:hover {
 
 .project-card .btn {
   margin-top: auto;
+}
+
+/* Project detail */
+.project-detail-hero {
+  max-width: 46rem;
+}
+
+.screenshots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-lg);
+}
+
+.screenshot-card {
+  background: var(--bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: var(--space-md);
+}
+
+.screenshot-placeholder {
+  background: #f4f4f4;
+  border-radius: var(--radius);
+  border: 1px dashed var(--border);
+  margin-bottom: var(--space-sm);
+}
+
+.screenshot-placeholder img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: calc(var(--radius) - 1px);
+}
+
+.screenshot-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
 }
 
 /* Newsletter */
@@ -373,6 +435,16 @@ a:hover {
 
   .hero {
     padding: var(--space-xl) 0;
+  }
+
+  .hero-layout {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-photo {
+    justify-content: flex-start;
+    max-width: 260px;
   }
 
   .newsletter-form {
